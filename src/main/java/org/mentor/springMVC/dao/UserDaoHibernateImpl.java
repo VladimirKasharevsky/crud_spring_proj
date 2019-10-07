@@ -4,18 +4,20 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
-import org.hibernate.cfg.Configuration;
-import org.mentor.springMVC.config.DBConfigHibernate;
-import org.mentor.springMVC.config.DBHelper;
 import org.mentor.springMVC.model.User;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+@Repository
 public class UserDaoHibernateImpl implements UserDao{
 
-   // Configuration configuration = DBConfigHibernate.getMySqlConfiguration();
-   Configuration configuration =  DBHelper.getDbHelper().getConfiguration();
-    private final SessionFactory sessionFactory = DBConfigHibernate.createSessionFactory(configuration);;
+//    Configuration configuration = DBConfigHibernate.getMySqlConfiguration();
+//   Configuration configuration =  DBHelper.getDbHelper().getConfiguration();
+    @Autowired
+    private  SessionFactory sessionFactory;
+//    = DBConfigHibernate.createSessionFactory(configuration);;
 
 
     public void createUser(User user) {
