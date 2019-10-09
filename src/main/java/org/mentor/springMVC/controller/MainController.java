@@ -17,7 +17,7 @@ public class MainController {
     @Autowired
     private UserService userService;
 
-    @RequestMapping(value = "/", method = RequestMethod.GET)
+    @RequestMapping(value = "/", method = RequestMethod.POST)
     public String getIndex(HttpServletRequest request) {
 
         List<User> list = userService.listData();
