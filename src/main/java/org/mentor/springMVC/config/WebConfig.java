@@ -14,13 +14,13 @@ import org.springframework.validation.Validator;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = "org.mentor.springMVC")
+@ComponentScan(basePackages = "org.mentor.springMVC.controller")
 public class WebConfig extends WebMvcConfigurerAdapter {
 
     @Bean
     ViewResolver viewResolver(){
         InternalResourceViewResolver resolver = new InternalResourceViewResolver();
-        resolver.setPrefix("/views/");
+        resolver.setPrefix("WEB-INF/views/");
         resolver.setSuffix(".jsp");
         return resolver;
     }

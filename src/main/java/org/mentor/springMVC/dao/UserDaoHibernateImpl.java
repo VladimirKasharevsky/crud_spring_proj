@@ -13,12 +13,9 @@ import java.util.List;
 @Repository
 public class UserDaoHibernateImpl implements UserDao{
 
-//    Configuration configuration = DBConfigHibernate.getMySqlConfiguration();
-//   Configuration configuration =  DBHelper.getDbHelper().getConfiguration();
+
     @Autowired
     private  SessionFactory sessionFactory;
-//    = DBConfigHibernate.createSessionFactory(configuration);;
-
 
     public void createUser(User user) {
         try {
@@ -34,7 +31,6 @@ public class UserDaoHibernateImpl implements UserDao{
 
     }
 
-
     public void deleteUser(String id) {
         try {
             Session session = sessionFactory.openSession();
@@ -48,7 +44,6 @@ public class UserDaoHibernateImpl implements UserDao{
             e.printStackTrace();
         }
     }
-
 
     public void updateUser(User user) {
         try {

@@ -2,7 +2,9 @@ package org.mentor.springMVC.config;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
-public class AppInit extends AbstractAnnotationConfigDispatcherServletInitializer {
+public class MyWebAppInitializer
+        extends AbstractAnnotationConfigDispatcherServletInitializer {
+
     @Override
     protected Class<?>[] getRootConfigClasses() {
         return new Class[] { AppConfig.class };
@@ -17,5 +19,4 @@ public class AppInit extends AbstractAnnotationConfigDispatcherServletInitialize
     protected String[] getServletMappings() {
         return new String[] { "/" };
     }
-
 }

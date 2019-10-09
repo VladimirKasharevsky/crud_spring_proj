@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import org.springframework.ui.Model;
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
@@ -17,11 +18,11 @@ public class MainController {
     @Autowired
     private UserService userService;
 
-    @RequestMapping(value = "/", method = RequestMethod.POST)
-    public String getIndex(HttpServletRequest request) {
+    @RequestMapping("/")
+    public String getIndex(Model model) {
 
         List<User> list = userService.listData();
-        request.setAttribute("list", list);
+        model.addAttribute("list", list);
         return "tableserv";
     }
 
