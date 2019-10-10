@@ -15,14 +15,14 @@ import java.util.List;
 @Controller
 public class MainController {
 
-    @Autowired
-    private UserService userService;
+//    @Autowired
+//    private UserService userService;
 
     @RequestMapping("/")
-    public String getIndex(Model model) {
+    public String getIndex() {
 
-        List<User> list = userService.listData();
-        model.addAttribute("list", list);
+//        List<User> list = userService.listData();
+//        model.addAttribute("list", list);
         return "tableserv";
     }
 
