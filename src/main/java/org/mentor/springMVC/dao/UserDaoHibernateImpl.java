@@ -17,6 +17,7 @@ public class UserDaoHibernateImpl implements UserDao{
     @Autowired
     private  SessionFactory sessionFactory;
 
+    @Override
     public void createUser(User user) {
         try {
             Session session = sessionFactory.openSession();
@@ -31,6 +32,7 @@ public class UserDaoHibernateImpl implements UserDao{
 
     }
 
+    @Override
     public void deleteUser(String id) {
         try {
             Session session = sessionFactory.openSession();
@@ -45,6 +47,7 @@ public class UserDaoHibernateImpl implements UserDao{
         }
     }
 
+    @Override
     public void updateUser(User user) {
         try {
             Session session = sessionFactory.openSession();
@@ -61,7 +64,7 @@ public class UserDaoHibernateImpl implements UserDao{
         }
     }
 
-
+    @Override
     public List<User> selectData() {
         try {
             Session session = sessionFactory.openSession();
@@ -74,7 +77,7 @@ public class UserDaoHibernateImpl implements UserDao{
         }
     }
 
-
+    @Override
     public User selectDataById(String id) {
             try {
                 Session session = sessionFactory.openSession();
@@ -87,7 +90,7 @@ public class UserDaoHibernateImpl implements UserDao{
             }
         }
 
-
+    @Override
     public User selectDataByLoginPassword(User user) {
         try {
             Session session = sessionFactory.openSession();

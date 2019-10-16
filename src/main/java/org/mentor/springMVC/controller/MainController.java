@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import org.springframework.ui.Model;
+import org.springframework.web.servlet.ModelAndView;
+
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
@@ -15,15 +17,14 @@ import java.util.List;
 @Controller
 public class MainController {
 
-//    @Autowired
-//    private UserService userService;
+    @Autowired
+    private UserService userService;
 
-    @RequestMapping("/")
-    public String getIndex() {
-
-//        List<User> list = userService.listData();
-//        model.addAttribute("list", list);
-        return "tableserv";
+    @RequestMapping (value = "/", method = RequestMethod.GET)
+    public ModelAndView  userForm() {
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("tableserv");
+        return modelAndView;
     }
 
 }

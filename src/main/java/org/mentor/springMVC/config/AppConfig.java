@@ -11,13 +11,12 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 import org.springframework.orm.hibernate4.HibernateTransactionManager;
 import org.springframework.orm.hibernate4.LocalSessionFactoryBean;
-
-
 import static org.hibernate.cfg.Environment.*;
+
 
 @Configuration
 @PropertySource("classpath:db.properties")
-@ComponentScan("org.mentor")
+@ComponentScan("org.mentor.springMVC")
 public class AppConfig {
 
     @Autowired
@@ -38,7 +37,6 @@ public class AppConfig {
         // Setting Hibernate properties
         props.put(SHOW_SQL, env.getProperty("hibernate.show_sql"));
         props.put(HBM2DDL_AUTO, env.getProperty("hibernate.hbm2ddl.auto"));
-        props.put(DIALECT, env.getProperty("hibernate.dialect"));
 
         factoryBean.setHibernateProperties(props);
         factoryBean.setAnnotatedClasses(User.class);

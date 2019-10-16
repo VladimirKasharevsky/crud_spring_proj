@@ -14,7 +14,7 @@ import java.util.List;
 public class UserServiceImpl implements UserService {
 
     @Autowired
-    UserDao userDao = new UserDaoHibernateImpl();
+    UserDao userDao;
 
     @Override
     @Transactional
